@@ -1,7 +1,9 @@
 import "./style.css"
-import MenuIcon from "./menu-icon.svg"
+import Hamburger from "./hamburger-icon.svg"
+import Close from "./close-icon.svg"
 
 function createNav() {
+    const menuElements = ["Home", "Menu", "About", "Contact"]
     const nav = document.createElement("nav")
 
     const logo = document.createElement("div")
@@ -11,20 +13,8 @@ function createNav() {
     const menuContainer = document.createElement("div")
     menuContainer.classList.add("nav-menu-container")
 
-    const closeBtnContainer = document.createElement("div")
-    closeBtnContainer.classList.add("close-button-container")
-    const closeBtn = document.createElement("button")
-    closeBtn.classList.add("close-button")
-    closeBtn.textContent="CLOSE"
-    closeBtn.addEventListener("click", () => {
-        menuContainer.classList.remove("nav-menu-fullscreen")
-    })
-    closeBtnContainer.appendChild(closeBtn)
-
     const menu = document.createElement("ul")
     menu.classList.add("nav-menu")
-    
-    const menuElements = ["Menu", "About", "Contact"]
 
     menuElements.forEach(element => {
         const listElement = document.createElement("li")
@@ -32,24 +22,46 @@ function createNav() {
         menu.appendChild(listElement)
     })
 
-    const menuFooter = document.createElement("div")
-    menuFooter.classList.add("nav-menu-footer")
-    menuFooter.textContent = "10C Imaginary Street, 30-000 Cracow"
-
-    menuContainer.appendChild(closeBtnContainer)
     menuContainer.appendChild(menu)
-    menuContainer.appendChild(menuFooter)
+
+    const closeBtn = new Image()
+    closeBtn.src = Close
+    closeBtn.classList.add("close-button", "hidden")
+    closeBtn.textContent = "CLOSE"
+    closeBtn.addEventListener("click", () => {
+        menuContainer.classList.remove("nav-menu-fullscreen")
+        // nav.removeChild(closeBtn)
+        // nav.appendChild(hamburger)
+        hamburger.classList.remove("hidden")
+        hamburger.classList.add("visible")
+        closeBtn.classList.remove("visible")
+        closeBtn.classList.add("hidden")
+    })
+
 
     const hamburger = new Image()
-    hamburger.src = MenuIcon
+    hamburger.src = Hamburger
     hamburger.classList.add("hamburger")
     hamburger.addEventListener("click", () => {
         menuContainer.classList.add("nav-menu-fullscreen")
+        // nav.removeChild(hamburger)
+        // nav.appendChild(closeBtn)
+        closeBtn.classList.remove("hidden")
+        closeBtn.classList.add("visible")
+        hamburger.classList.remove("visible")
+        hamburger.classList.add("hidden")
+
     })
+
+    const buttonsContainer = document.createElement("div")
+    buttonsContainer.classList.add("buttons-container")
+    buttonsContainer.appendChild(hamburger)
+    buttonsContainer.appendChild(closeBtn)
+
 
     nav.appendChild(logo)
     nav.appendChild(menuContainer)
-    nav.appendChild(hamburger)
+    nav.appendChild(buttonsContainer)
 
     return nav
 }

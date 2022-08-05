@@ -10,6 +10,7 @@
 :root {
     --fancy-font: "Allura", cursive;
     --sans-sherif-font: "Inter", sans-sherif;
+    --nav-height: 60px;
 }
 
 #content {
@@ -21,14 +22,12 @@
 /* Navbar section */
 
 nav {
-    /* border: 1px solid red; */
-    width: 100%;
-    height: 60px;
+    height: var(--nav-height);
     overflow: hidden;
     padding: 0 15px;
     display: grid;
     align-items: center;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr auto auto;
 }
 
 .logo {
@@ -36,45 +35,61 @@ nav {
     font-size: 2rem;
 }
 
-.close-button-container {
-    display: none;
+.buttons-container{
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+}
+
+.hamburger,
+.close-button {
+    position: absolute;
+    cursor: pointer;
+    height: 2.5rem;
+    transition: all 0.3s;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
 }
 
 .nav-menu-container {
-    display: none;
+    display: grid;
+    transition: opacity 0.5s ease-out;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .nav-menu-fullscreen {
-    display: grid !important;
-    background-color: white;
-    grid-template-rows: 1fr 1fr auto;
+    visibility: visible;
+    opacity: 1;
     align-content: end;
-    justify-items: center;
-    justify-content: center;
+    background-color: #ffffffcc;
+    padding: calc(var(--nav-height)*2) 0;
     position: absolute;
-
-    top: 0;
+    top: var(--nav-height);
     right: 0;
     bottom: 0;
     left: 0;
 }
 
-.nav-menu-fullscreen li {
-    border: 1px solid darkcyan;
-}
-
-.nav-menu-fullscreen > * {
+.nav-menu-fullscreen>* {
     display: grid !important;
-
 }
 
 .nav-menu {
-    background-color: white;
     list-style: none;
     display: none;
-    gap: 20px;
-    font-size: 1rem;
+    gap: 30px;
+    font-size: 1.2rem;
     font-family: var(--sans-sherif-font);
+    text-align: center;
     letter-spacing: 0.5px;
 }
 
@@ -82,21 +97,14 @@ nav {
     cursor: pointer;
 }
 
-.nav-menu-footer {
-    display: none;
-}
-
-.hamburger {
-    cursor: pointer;
-}
-
 /* Main section */
 
 main {
-    /* border: 1px solid purple; */
     background-image: url('./hero.jpg');
     background-size: cover;
 }
+
+/* Desktops and tablets */
 
 @media only screen and (min-width: 600px) {
     .hamburger {
@@ -104,9 +112,12 @@ main {
     }
 
     .nav-menu-container {
-        display: flex;        
+        visibility: visible;
+        opacity: 1;
     }
+
     .nav-menu {
         display: flex;
+        font-size: 1rem;
     }
 }
