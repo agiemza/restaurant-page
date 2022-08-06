@@ -1,3 +1,3 @@
 import ui from "./components/ui"
 
-window.addEventListener("DOMContentLoaded", ui())
+window.addEventListener("DOMContentLoaded", ui)

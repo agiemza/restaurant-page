@@ -1,13 +1,11 @@
 import "../style.css"
-import home from "./home"
-import navbar from "./navbar"
+import nav from "./nav"
+import switchTab from "./switch-tab"
 
 export default function ui() {
-    
-    // Navbar
-    document.querySelector("#content").appendChild(navbar())
-
-    // Main content
-    document.querySelector("#content").appendChild(home())
-    
+    const content = document.querySelector("#content")
+    const main = document.createElement("main")
+    content.appendChild(nav())
+    content.appendChild(main)
+    switchTab("home")
 }

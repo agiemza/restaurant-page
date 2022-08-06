@@ -1,7 +1,7 @@
 import OpenIcon from "../hamburger-icon.svg"
 import CloseIcon from "../close-icon.svg"
 
-export default function navbar() {
+function nav() {
     const menuElements = ["Home", "Menu", "About", "Contact"]
     const nav = document.createElement("nav")
 
@@ -32,6 +32,7 @@ function createMenu(elements) {
 
     elements.forEach(element => {
         const li = document.createElement("li")
+        li.classList.add("tab", `${element}`.toLowerCase())
         li.textContent = element
         list.appendChild(li)
     })
@@ -96,3 +97,6 @@ function showButton(button) {
     inactive.classList.remove("visible")
     inactive.classList.add("hidden")
 }
+
+export default nav 
+export { handleClick }
