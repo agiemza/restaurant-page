@@ -41,7 +41,7 @@ nav {
     position: relative;
 }
 
-.hamburger,
+.open-button,
 .close-button {
     position: absolute;
     cursor: pointer;
@@ -107,7 +107,7 @@ main {
 /* Desktops and tablets */
 
 @media only screen and (min-width: 600px) {
-    .hamburger {
+    .open-button {
         display: none;
     }
 
