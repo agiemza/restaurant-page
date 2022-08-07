@@ -86,7 +86,10 @@ function handleClick(action) {
 }
 
 function toggleFulscreen(action) {
-    document.querySelector(".nav-menu-container").classList[action]("nav-menu-fullscreen")
+    document.querySelector(".nav-menu-container").classList[action]("nav-fullscreen")
+    setTimeout(() => {
+        document.querySelector(".nav-menu").classList[action]("nav-menu-open")
+    }, 300);
 }
 
 function showButton(button) {
@@ -98,5 +101,5 @@ function showButton(button) {
     inactive.classList.add("hidden")
 }
 
-export default nav 
+export default nav
 export { handleClick }

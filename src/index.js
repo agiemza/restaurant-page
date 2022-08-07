@@ -1,3 +1,3 @@
-import ui from "./components/ui"
+import loadApp from "./components/loadApp"
 
-window.addEventListener("DOMContentLoaded", ui)
+window.addEventListener("DOMContentLoaded", loadApp)
