@@ -89,7 +89,7 @@ function toggleFulscreen(action) {
     document.querySelector(".nav-menu-container").classList[action]("nav-fullscreen")
     setTimeout(() => {
         document.querySelector(".nav-menu").classList[action]("nav-menu-open")
-    }, 300);
+    }, 100);
 }
 
 function showButton(button) {

@@ -4,7 +4,7 @@ import { handleClick as closeMenu } from "./nav"
 export default function switchTab(tab) {
     const tabs = document.querySelectorAll(".tab")
     setEventListeners(tabs)
-    setActive(document.querySelector(".home"))
+    setActive(document.querySelector(`.${tab}`))
 }
 
 function setEventListeners(elements) {
