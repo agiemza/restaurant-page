@@ -54,7 +54,7 @@ export default {
             price: "6.00",
         },
     ],
-    drinks: [
+    softDrinks: [
         {
             category: "Soft drinks",
         },
@@ -64,15 +64,14 @@ export default {
             price: "2.00",
         },
         {
-            name: "Coffee",
-            descritpion: "espresso / americano / latte / cappuccino",
-            price: "3.00",
-        },
-
-        {
             name: "Perrier",
             descritpion: "a sparkling water but more expensive",
             price: "5.00",
+        },
+        {
+            name: "Coffee",
+            descritpion: "espresso / americano / latte / cappuccino",
+            price: "3.00",
         },
 
     ],

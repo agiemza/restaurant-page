@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -7,23 +9,37 @@
 }
 
 :root {
-    --fancy-font: "Allura", cursive;
+    --logo-font: "Allura", cursive;
+    --fancy-font: "Dancing Script", cursive;
     --serif-font: "Playfair Display", serif;
     --nav-height: 60px;
     --text-color: black;
     --dark-color: rgb(30, 30, 30);
-    --h1-color: rgba(255, 255, 255, 0.9);
+    --h1-color: rgba(255, 255, 255);
 }
 
 h1 {
     font-size: 4rem;
     font-family: var(--fancy-font);
     color: var(--h1-color);
+    text-shadow: 0 0 1rem var(--dark-color);
+    text-align: center;
+    font-weight: 400;
 }
 
 h2 {
     font-size: 1.5rem;
     font-weight: 500;
+}
+
+h3 {
+    font-family: var(--fancy-font);
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-shadow: 0 0 1rem var(--dark-color);
+    text-align: center;
+    color: white;
 }
 
 #content {
@@ -44,7 +60,7 @@ nav {
 }
 
 .logo {
-    font-family: var(--fancy-font);
+    font-family: var(--logo-font);
     font-size: 2rem;
 }
 
@@ -154,8 +170,20 @@ main {
 /* Home page */
 
 .home-page {
-    background-image: url('./images/hero1.jpg');
+    display: grid;
+    gap: 2rem;
+}
+
+.home-hero {
+    display: grid;
+    gap: 0.5rem;
+    height: calc(100vh - var(--nav-height));
+    justify-content: center;
+    align-content: center;
+    background-image: url('./images/hero5.jpg');
     background-size: cover;
+    background-position: center top;
+    padding: 15px;
 }
 
 /* Menu page */
@@ -163,23 +191,16 @@ main {
 .menu-page {
     display: grid;
     gap: 2rem;
-    padding-bottom: 2rem;
 }
 
 .menu-hero {
     height: 50vh;
-    background-image: url("./images/hero2.jpg");
+    background-image: url("./images/hero1.jpg");
     background-size: cover;
-    background-position: center center;
     display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr;
+    justify-content: center;
+    align-content: center;
     padding: 2rem;
-}
-
-.menu-hero h1 {
-    grid-column: 2;
-    align-self: center;
-    justify-self: center;
 }
 
 .menu-list {
@@ -192,6 +213,7 @@ main {
 
 .menu-list h2 {
     margin-bottom: 1rem;
+    padding-bottom: 5px;
     color: var(--dark-color);
     border-bottom: 1px solid var(--dark-color);
 }
@@ -204,11 +226,13 @@ main {
 .menu-item-container {
     display: grid;
 }
+
 .menu-item-container div:first-child {
     display: grid;
     grid-template-columns: 1fr auto;
     /* font-weight: 700; */
 }
+
 .menu-item-container p {
     color: var(--dark-color);
     font-style: italic;
@@ -240,8 +264,8 @@ main {
     }
 }
 
-/* Bigger screens */ 
-@media only screen and (min-width: 1440px) { 
+/* Bigger screens */
+@media only screen and (min-width: 1440px) {
     h1 {
         font-size: 8rem;
     }
