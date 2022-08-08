@@ -45,7 +45,7 @@ export default {
         },
         {
             name: "Crème brûlée",
-            descritpion: "vanilla cream with carmelised sougar",
+            descritpion: "vanilla cream with carmelised sugar",
             price: "5.00",
         },
         {
@@ -59,18 +59,18 @@ export default {
             category: "Soft drinks",
         },
         {
-            name: "Watter",
-            descritpion: "still / sparkling",
+            name: "Hydrogen monoxide",
+            descritpion: "with carbon dioxide / without carbon dioxide",
             price: "2.00",
         },
         {
             name: "Perrier",
-            descritpion: "a sparkling water but more expensive",
+            descritpion: "a sparkling water but way more expensive",
             price: "5.00",
         },
         {
             name: "Coffee",
-            descritpion: "espresso / americano / latte / cappuccino",
+            descritpion: "ristretto / espresso / doppio / tripplo",
             price: "3.00",
         },
 

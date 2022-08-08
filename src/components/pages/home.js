@@ -9,7 +9,7 @@ export default function home() {
 
 function createHero() {
     const container = document.createElement("section")
-    container.classList.add("home-hero")
+    container.classList.add("home-hero", "hero")
 
     const title = document.createElement("h1")
     title.innerHTML = "Bienvenue<br>à La Fourchette"

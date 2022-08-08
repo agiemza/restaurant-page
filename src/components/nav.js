@@ -76,20 +76,20 @@ function createCloseButton() {
 
 function handleClick(action) {
     if (action === "close") {
-        toggleFulscreen("remove")
+        toggleFullScreen("remove")
         showButton("open")
     }
     if (action === "open") {
-        toggleFulscreen("add")
+        toggleFullScreen("add")
         showButton("close")
     }
 }
 
-function toggleFulscreen(action) {
+function toggleFullScreen(action) {
     document.querySelector(".nav-menu-container").classList[action]("nav-fullscreen")
     setTimeout(() => {
         document.querySelector(".nav-menu").classList[action]("nav-menu-open")
-    }, 100);
+    }, 0);
 }
 
 function showButton(button) {

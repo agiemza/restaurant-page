@@ -1,4 +1,4 @@
-import Dishes from "../dishes"
+import Dishes from "../data/dishes"
 
 export default function menu() {
     const element = document.createElement("div")
@@ -12,7 +12,7 @@ export default function menu() {
 
 function createHero() {
     const menuHero = document.createElement("section")
-    menuHero.classList.add("menu-hero")
+    menuHero.classList.add("menu-hero", "hero")
 
     const title = document.createElement("h1")
     title.textContent = "Menu"
