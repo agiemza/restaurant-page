@@ -11,6 +11,7 @@ function setEventListeners(elements) {
     elements.forEach(element => {
         element.addEventListener("click", () => handleClick(elements, element))
     })
+    document.querySelector(".logo").addEventListener("click", () => handleClick(elements, elements[0]))
 }
 
 function handleClick(elements, element) {

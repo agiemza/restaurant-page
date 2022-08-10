@@ -17,10 +17,15 @@ function nav() {
 }
 
 function createLogo(text) {
+    const logoContainer = document.createElement("div")
+    logoContainer.classList.add("logo-container")
+
     const logo = document.createElement("div")
     logo.classList.add("logo")
     logo.textContent = text
-    return logo
+    logoContainer.appendChild(logo)
+
+    return logoContainer
 }
 
 function createMenu(elements) {

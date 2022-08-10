@@ -77,9 +77,14 @@ nav {
     grid-template-columns: 1fr auto auto;
 }
 
+.logo-container {
+    display: flex;
+}
+
 .logo {
     font-family: var(--logo-font);
     font-size: 2rem;
+    cursor: pointer;
 }
 
 .buttons-container {
@@ -315,7 +320,8 @@ main {
     }
 
     .contact-details-wrapper {
-        grid-template-columns: auto 1fr;
+        padding: 2rem;
+        grid-template-columns: 1fr 2fr;
     }
 
     .contact-map {
