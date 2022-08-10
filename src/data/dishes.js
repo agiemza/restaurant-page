@@ -60,7 +60,7 @@ export default {
         },
         {
             name: "Hydrogen monoxide",
-            descritpion: "with carbon dioxide / without carbon dioxide",
+            descritpion: "with or without carbon dioxide",
             price: "2.00",
         },
         {
@@ -82,17 +82,17 @@ export default {
         {
             name: "Sémillon (1 glass)",
             descritpion: "Château Graville-Lacoste / Bordeaux / 2019",
-            price: "4.40",
+            price: "6.00",
         },
         {
             name: "Gewürztraminer (1 glass)",
             descritpion: "Domaines Schlumberger / Alsace / 2018",
-            price: "4.60",
+            price: "6.00",
         },
         {
             name: "Pinot noir (1 glass)",
             descritpion: "Jean-Claude Boisset/ Burgundy / 2017",
-            price: "5.80",
+            price: "8.00",
         },
     ],
 }
