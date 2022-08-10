@@ -52,6 +52,10 @@ h3 {
     grid-template-rows: auto 1fr;
 }
 
+.overflowHidden {
+    overflow: hidden;
+}
+
 .hero {
     display: grid;
     gap: 0.5rem;

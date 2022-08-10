@@ -86,6 +86,7 @@ function handleClick(action) {
 }
 
 function toggleFullScreen(action) {
+    document.body.classList[action]("overflowHidden")
     document.querySelector(".nav-menu-container").classList[action]("nav-fullscreen")
     setTimeout(() => {
         document.querySelector(".nav-menu").classList[action]("nav-menu-open")
