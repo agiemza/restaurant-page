@@ -1,5 +1,5 @@
-import OpenIcon from "../hamburger-icon.svg"
-import CloseIcon from "../close-icon.svg"
+import OpenIcon from "../images/icons/hamburger-icon.svg"
+import CloseIcon from "../images/icons/close-icon.svg"
 
 function nav() {
     const menuElements = ["Home", "Menu", "About", "Contact"]

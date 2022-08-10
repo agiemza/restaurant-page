@@ -1,4 +1,4 @@
-import Dishes from "../data/dishes"
+import Dishes from "../../data/dishes"
 
 export default function menu() {
     const element = document.createElement("div")
