@@ -7,5 +7,5 @@ export default function loadApp() {
     const main = document.createElement("main")
     content.appendChild(nav())
     content.appendChild(main)
-    switchTab("about")
+    switchTab("home")
 }
