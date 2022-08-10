@@ -1,11 +1,14 @@
 import companyData from "../data/companyData"
+import L from "leaflet"
+import "leaflet/dist/leaflet.css"
+import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css"
+import "leaflet-defaulticon-compatibility"
 
 export default function contact() {
     const element = document.createElement("div")
-    element.classList.add("contact")
-
+    element.classList.add("contact-page")
     element.appendChild(createHero())
-    element.appendChild(createCompanyData())
+    element.appendChild(createDetailsSection())
     return element
 }
 
@@ -21,10 +24,17 @@ function createHero() {
     return container
 }
 
-function createCompanyData() {
+function createDetailsSection() {
     const container = document.createElement("section")
     container.classList.add("contact-details-wrapper")
 
+    container.appendChild(createCompanyData())
+    container.appendChild(createMap())
+
+    return container
+}
+
+function createCompanyData() {
     const textContainer = document.createElement("div")
     textContainer.classList.add("contact-details")
 
@@ -43,13 +53,34 @@ function createCompanyData() {
         valueContainer.textContent = value
         wrapper.appendChild(valueContainer)
 
-
         textContainer.appendChild(wrapper)
     })
 
-    // const mapContainer = document.createElement("div")
+    return textContainer
+}
 
-    container.appendChild(textContainer)
 
-    return container
+function createMap() {
+    const mapWrapper = document.createElement("div")
+    mapWrapper.classList.add("contact-map")
+
+    const mapContainer = document.createElement("div")
+    mapContainer.id = "map"
+
+    mapWrapper.appendChild(mapContainer)
+
+    const map = L.map(mapContainer).setView([51.51980100799976, -0.14275167574379952], 13)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map)
+
+    L.marker([51.51980100799976, -0.14275167574379952]).addTo(map)
+        .bindPopup("We are here!")
+
+    // adjust mapsize when its DOM element is loaded
+    setTimeout(function () {
+        map.invalidateSize();
+    }, 100);
+
+    return mapWrapper
 }
